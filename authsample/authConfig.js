@@ -10,7 +10,7 @@ const msalConfig = {
         // Full directory URL, in the form of https://login.microsoftonline.com/<tenant-id>
         authority: "https://login.microsoftonline.com/3ea78af3-094b-492f-9237-8077bc4f31ab",
         // Full redirect URL, in form of http://localhost:3000
-        redirectUri: "https://gray-river-04dae7703.4.azurestaticapps.net",
+        redirectUri: "https://witty-glacier-03a3ce003.4.azurestaticapps.net",
         //redirectUri: "http://localhost:3000",
     },
     cache: {
