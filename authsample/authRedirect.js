@@ -87,11 +87,11 @@ function getTokenRedirect(request) {
     });
 }
 
-function callOpenHello() {
+function callHello() {
     getTokenRedirect(functionRequest)
         .then((response) => {
             callFunction(
-                functionConfig.openHello,
+                functionConfig.hello,
                 response.accessToken,
                 logResponse
             );

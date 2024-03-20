@@ -112,10 +112,10 @@ function readMail() {
         });
 }
 
-function callOpenHello(){
+function callHello(){
     getTokenPopup(functionRequest)
     .then(response => {
-        callFunction(functionConfig.openHello, response.accessToken, logResponse);
+        callFunction(functionConfig.hello, response.accessToken, logResponse);
     }).catch(error => {
         console.error(error);
     });
