@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Azure.Identity;
+using Microsoft.Extensions.Primitives;
 
 namespace func_secapp
 {
@@ -22,8 +23,17 @@ namespace func_secapp
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req,
             ClaimsPrincipal principal) {
 
+
             // log principal stuff
-            var claimValues = string.Join(",", principal.Claims.Select(x => x.Value).ToList());
+            // Get the Authorization header from the incoming HTTP request
+            StringValues authorizationHeaders;
+            if (!req.Headers.TryGetValue("Authorization", out authorizationHeaders)) {
+                return new BadRequestObjectResult("Authorization header not found");
+            }
+            
+            _logger.LogInformation("auth header: {authorizationHeaders}", authorizationHeaders.ToString());
+
+            //var claimValues = string.Join(",", principal.Claims.Select(x => x.Value).ToList());
             var identity = principal.Identity?.Name;
             var isAuth = principal.Identity?.IsAuthenticated;
 
