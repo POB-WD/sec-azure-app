@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using System.Security.Claims;
 using Azure.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,16 @@ namespace func_secapp
         }
 
         [Function("GetHello")]
-        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req) {
+        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req,
+            ClaimsPrincipal principal) {
+
+            // log principal stuff
+            var claimValues = string.Join(",", principal.Claims.Select(x => x.Value).ToList());
+            var identity = principal.Identity?.Name;
+            var isAuth = principal.Identity?.IsAuthenticated;
+
+            _logger.LogInformation("claimValues: {claimValues}, identity: {identity}, isAuth: {isAuth}", claimValues, identity, isAuth);
+
 
             var clientId = "3d14b644-fee0-4f1f-af2e-0343c86148c0";
             var clientSecret = Environment.GetEnvironmentVariable("ClientSecret");
