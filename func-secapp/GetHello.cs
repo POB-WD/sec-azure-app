@@ -33,12 +33,11 @@ namespace func_secapp
             _logger.LogInformation("auth header: {authorizationHeaders}", authorizationHeaders.ToString());
 
             //var claimValues = string.Join(",", principal.Claims.Select(x => x.Value).ToList());
-            var identity = principal.Identity?.Name;
-            var isAuth = principal.Identity?.IsAuthenticated;
+            //var identity = principal.Identity?.Name;
+            //var isAuth = principal.Identity?.IsAuthenticated;
 
             //_logger.LogInformation("claimValues: {claimValues}, identity: {identity}, isAuth: {isAuth}", claimValues, identity, isAuth);
-            _logger.LogInformation("identity: {identity}, isAuth: {isAuth}",identity, isAuth);
-
+            
 
             var clientId = "3d14b644-fee0-4f1f-af2e-0343c86148c0";
             var clientSecret = Environment.GetEnvironmentVariable("ClientSecret");
