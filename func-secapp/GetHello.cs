@@ -26,8 +26,7 @@ namespace func_secapp
 
             // log principal stuff
             // Get the Authorization header from the incoming HTTP request
-            StringValues authorizationHeaders;
-            if (!req.Headers.TryGetValue("Authorization", out authorizationHeaders)) {
+            if (!req.Headers.TryGetValue("Authorization", out var authorizationHeaders)) {
                 return new BadRequestObjectResult("Authorization header not found");
             }
             
@@ -37,7 +36,8 @@ namespace func_secapp
             var identity = principal.Identity?.Name;
             var isAuth = principal.Identity?.IsAuthenticated;
 
-            _logger.LogInformation("claimValues: {claimValues}, identity: {identity}, isAuth: {isAuth}", claimValues, identity, isAuth);
+            //_logger.LogInformation("claimValues: {claimValues}, identity: {identity}, isAuth: {isAuth}", claimValues, identity, isAuth);
+            _logger.LogInformation("identity: {identity}, isAuth: {isAuth}",identity, isAuth);
 
 
             var clientId = "3d14b644-fee0-4f1f-af2e-0343c86148c0";
