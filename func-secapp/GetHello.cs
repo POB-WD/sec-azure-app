@@ -59,12 +59,12 @@ namespace func_secapp
             
             using var httpClient = new HttpClient();
             //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Token);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", incomingToken);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", incomingToken.ToString());
 
             var response = await httpClient.GetAsync(functionUrl);
 
             if (!response.IsSuccessStatusCode) {
-                _logger.LogInformation("HTTP call to Azure Function through API Management failed!");
+                _logger.LogInformation("HTTP call to Azure Function (open) through API Management failed! {response}", response.StatusCode);
                 return new OkObjectResult("boo!");
             }
             _logger.LogInformation("HTTP call to Azure Function through API Management succeeded!");
