@@ -53,13 +53,14 @@ namespace func_secapp
 
             // reuse incoming token
             var incomingToken = req.Headers["Authorization"];
+            _logger.LogInformation("extracted auth header: {token}", incomingToken.ToString());
             if (StringValues.IsNullOrEmpty(incomingToken)) {
                 return new BadRequestObjectResult("Bearer token not provided.");
             }
             
             using var httpClient = new HttpClient();
             //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Token);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", incomingToken.ToString());
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(incomingToken.ToString());
 
             var response = await httpClient.GetAsync(functionUrl);
 
