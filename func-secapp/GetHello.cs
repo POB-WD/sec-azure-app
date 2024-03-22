@@ -51,8 +51,15 @@ namespace func_secapp
             var tokenRequestContext = new TokenRequestContext(new[] { scope });
             var accessToken = await credential.GetTokenAsync(tokenRequestContext);
 
+            // reuse incoming token
+            var incomingToken = req.Headers["Authorization"];
+            if (StringValues.IsNullOrEmpty(incomingToken)) {
+                return new BadRequestObjectResult("Bearer token not provided.");
+            }
+            
             using var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Token);
+            //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Token);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", incomingToken);
 
             var response = await httpClient.GetAsync(functionUrl);
 
