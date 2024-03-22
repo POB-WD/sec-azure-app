@@ -66,8 +66,9 @@ namespace func_secapp
                 _logger.LogInformation("HTTP call to Azure Function (open) through API Management failed! {response}", response.StatusCode);
                 return new BadRequestObjectResult("boo!");
             }
-            _logger.LogInformation("HTTP call to Azure Function through API Management succeeded!");
-            return new OkObjectResult("yay!");
+            _logger.LogInformation("HTTP call to Azure Function through API Management succeeded! Response: {response}", response);
+            
+            return new OkObjectResult($"yay! {response}");
         }
     }
 }
