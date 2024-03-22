@@ -60,7 +60,7 @@ namespace func_secapp
             
             using var httpClient = new HttpClient();
             //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Token);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(incomingToken.ToString());
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", incomingToken.ToString());
 
             var response = await httpClient.GetAsync(functionUrl);
 
