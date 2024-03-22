@@ -51,22 +51,20 @@ namespace func_secapp
             var tokenRequestContext = new TokenRequestContext(new[] { scope });
             var accessToken = await credential.GetTokenAsync(tokenRequestContext);
 
-            // reuse incoming token
-            var incomingToken = req.Headers["Authorization"];
-            _logger.LogInformation("extracted auth header: {token}", incomingToken.ToString());
-            if (StringValues.IsNullOrEmpty(incomingToken)) {
-                return new BadRequestObjectResult("Bearer token not provided.");
+            var authHeader = req.Headers["Authorization"];
+            if (!AuthenticationHeaderValue.TryParse(authHeader, out var tokenValue)) {
+                return new BadRequestObjectResult("No valid bearer token provided.");
             }
-            
+
             using var httpClient = new HttpClient();
             //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken.Token);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", incomingToken.ToString());
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(tokenValue.Scheme, tokenValue.Parameter);
 
             var response = await httpClient.GetAsync(functionUrl);
 
             if (!response.IsSuccessStatusCode) {
                 _logger.LogInformation("HTTP call to Azure Function (open) through API Management failed! {response}", response.StatusCode);
-                return new OkObjectResult("boo!");
+                return new BadRequestObjectResult("boo!");
             }
             _logger.LogInformation("HTTP call to Azure Function through API Management succeeded!");
             return new OkObjectResult("yay!");
