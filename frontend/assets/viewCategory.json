@@ -1,0 +1,24 @@
+{
+    "municipality": {
+        "name": "municipality",
+        "displayName": "Ansichten Gemeinde",
+        "icon": "gi-icon-municipality",
+        "views": [
+            "municipality",
+            "origin",
+            "municipalityGridMixed",
+            "municipalityGridX500",
+            "municipalityGridX250"
+        ]
+    },
+    "perimeter": {
+        "name": "perimeter",
+        "displayName": "Ansichten Umkreis",
+        "icon": "gi-icon-perimeter",
+        "views": [
+            "perimeterGridMixed",
+            "perimeterGridX500",
+            "perimeterGridX250"
+        ]
+    }
+}

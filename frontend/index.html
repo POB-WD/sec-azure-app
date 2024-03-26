@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>GeoInsights</title>
+
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" />
+
+    <!-- Set Viewport to Device-Width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
+    <link href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.css" rel="stylesheet" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js"></script>
+
+    <!-- Add reference to the Azure Maps Spatial IO module. -->
+    <script src="https://atlas.microsoft.com/sdk/javascript/spatial/0/atlas-spatial.min.js"></script>
+
+    <!-- Add references to the Azure Maps Map Drawing Tools JavaScript and CSS files. -->
+    <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.css" type="text/css" />
+    <script src="https://atlas.microsoft.com/sdk/javascript/drawing/0/atlas-drawing.min.js"></script>
+
+    <!-- Add reference to the Azure Maps Service Module JavaScript file -->
+    <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
+
+    <!-- Add reference to the Azure Maps Layer/Legend Control JavaScript and CSS files. -->
+    <link  rel="stylesheet" href="lib/azure-maps-layer-legend/azure-maps-layer-legend.min.css" type="text/css"/>
+    <script src="lib/azure-maps-layer-legend/azure-maps-layer-legend.min.js"></script>
+
+    <!-- Add reference to ChartJs JavaScript -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
+    <!-- Add references to custom JavaScript and CSS files. -->
+    <link href="./styles/styles.css" rel="stylesheet" />
+    <script type="module" src="./main.js"></script>
+  </head>
+  <body>
+    <!-- Geo Insights Banner -->
+    <div id="b-geo-insights" class="card gi-animation" style="--gi-animation-property: right">
+      <img id="b-logo-geo-insights" class="card-img-top div-inline" src="assets/logo_wd.png">
+      <div class="card-body div-inline">
+        <p class="card-text">
+          Powered by <a href="https://www.world-direct.at/">World-Direct</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Muni Search Meta -->
+    <div id="muni-search-meta" class="card gi-animation visually-hidden" style="--gi-animation-property: background-color;">
+      <div id="muni-search-info" class="card-body">
+        <h2 id="muni-search-info-freeform" class="card-title"></h2>
+        <p class="card-text">
+          <span id="muni-search-info-street"></span>
+          <br>
+          <span id="muni-search-info-muni"></span>
+          <span id="muni-search-info-district"></span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Container -->
+    <div class="container-fluid gi-container">
+      <!-- Header -->
+      <div class="row gi-row gi-row-header">
+        <div id="branding-header" class="col row gi-row gi-section"></div>
+        <div class="col-auto gi-col d-flex align-items-center gi-logout-container">
+          <a href="/.auth/logout" fill="currentColor" class="float-right bi big-icon bi-box-arrow-right filter-icon"
+            data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-trigger="hover" title="Abmelden"
+            data-bs-original-title="Abmelden" aria-label="Abmelden"></a>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="row gi-row gi-row-content">
+        <!-- Container for Map -->
+        <div id="mobinsMapContainer" class="col-8 gi-col">
+          <div class="gi-section">
+            <div id="mobinsMap"></div>
+          </div>
+        </div>
+
+        <div id="mobinsFilterAndChartContainer" class="col-4 gi-col">
+          <!-- Container for Search / Filters -->
+          <div id="mobinsSearch" class="row gi-row gi-section">
+            <!-- Search -->
+            <div class="row gi-row gi-searchbox">
+              <div class="input-group">
+                <div class="form-floating flex-grow-1">
+                  <input type="text" id="muni-search" name="muni-search" class="form-control gi-animation" style="--gi-animation-property: border-color" placeholder="Definieren Sie eine Adresse oder Gemeinde...">
+                  <label for="muni-search" class="muni-search-label">Definieren Sie eine Adresse oder Gemeinde...</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Filters -->
+            <div id="filters" class="row gi-row">
+              <div id="filter-group-view" class="row"></div>
+            </div>
+          </div>
+
+          <!-- Container for Chart 1 -->
+          <div id="mobinsChartAreaDynamicData" class="row gi-row gi-section carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
+            <div id="carousel-indicators" class="carousel-indicators">
+            </div>
+            <div id="carousel-inner" class="carousel-inner">
+            </div>
+            <button class="carousel-control-prev carousel-control gi-animation" style="--gi-animation-property: background-color;" type="button" data-bs-target="#mobinsChartAreaDynamicData" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next carousel-control gi-animation" style="--gi-animation-property: background-color;" type="button" data-bs-target="#mobinsChartAreaDynamicData" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

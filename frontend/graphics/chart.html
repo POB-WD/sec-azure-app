@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Standalone Chart - GeoInsights</title>
+
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="../assets/favicon.ico" />
+
+        <!-- Set Viewport to Device-Width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+        <!-- Add reference to ChartJs JavaScript -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
+        <!-- Add references to custom JavaScript and CSS files. -->
+        <link href="../styles/styles.css" rel="stylesheet" />
+        <script type="module" src="./chartStandalone.js"></script>
+    </head>
+    <body>
+        <div id="ready-check"></div>
+        <div class="container-fluid gi-container standalone">
+            <div class="row gi-row standalone">
+                <div class="col gi-col standalone">
+                    <!-- Container for Chart 1 -->
+                    <div class="row gi-row gi-section carousel carousel-dark slide" data-bs-ride="false" data-bs-interval="false">
+                        <div id="carousel-indicators" class="carousel-indicators visually-hidden"></div>
+                        <div id="carousel-inner" class="carousel-inner"></div>
+                        <button class="carousel-control-prev carousel-control gi-animation visually-hidden" style="--gi-animation-property: background-color;" type="button" data-bs-target="#mobinsChartAreaDynamicData" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next carousel-control gi-animation visually-hidden" style="--gi-animation-property: background-color;" type="button" data-bs-target="#mobinsChartAreaDynamicData" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>

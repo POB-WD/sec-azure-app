@@ -1,0 +1,178 @@
+{
+  "municipality": {
+    "name": "municipality",
+    "displayName": "Mobilitätsdaten Gemeinde",
+    "icon": "gi-icon-municipality-inside",
+    "description": "<strong>Mobilitätsdaten Gemeinde</strong><p>Diese Ansicht stellt Daten mit Bezug auf die gesamte Gemeinde dar.</p>",
+    "filters": [
+      "Month",
+      "Weekday"
+    ],
+    "overlays": [
+      "Municipality",
+      "Pin"
+    ],
+    "charts": [
+      "Passersby",
+      "Residents",
+      "Visitors",
+      "DailyPopulation",
+      "TotalDemographics",
+      "InhabitantDemographics",
+      "VisitorDemographics"
+    ]
+  },
+  "origin": {
+    "name": "origin",
+    "displayName": "Besucherstunden pro Gemeindeherkunft",
+    "icon": "gi-icon-municipality-outside",
+    "description": "<strong>Besucherstunden pro Gemeindeherkunft</strong><p>Diese Ansicht stellt Daten mit Bezug auf die gesamte Gemeinde dar.<br>Weiters werden die Herkunftsgemeinden der Besuchenden angezeigt.</p>",
+    "filters": [
+      "Month",
+      "Weekday",
+      "Age",
+      "Gender"
+    ],
+    "overlays": [
+      "VisitorOrigins",
+      "Municipality",
+      "Pin"
+    ],
+    "charts": [
+      "Visitors",
+      "VisitorDemographics"
+    ]
+  },
+  "municipalityGridMixed": {
+    "name": "municipalityGridMixed",
+    "displayName": "Durchreisende Gemeinde auf Basis dynamischer Raster (Kombination aus 250m und 500m Raster)",
+    "icon": "gi-icon-municipality-grid-mix",
+    "description": "<strong>Durchreisende Gemeinde auf Basis dynamischer Raster (Kombination aus 250m und 500m Raster)</strong><p>Diese Ansicht stellt Daten mit Bezug auf die gesamte Gemeinde dar.<br>Weiters werden die Daten des gemischten Rasters angezeigt.</p>",
+    "filters": [
+      "Month",
+      "Weekday",
+      "Age",
+      "Gender"
+    ],
+    "overlays": [
+      "PassersbyGrid",
+      "Municipality",
+      "Pin"
+    ],
+    "charts": [
+      "PassersbyTile",
+      "PassersbyTileDemographics",
+      "PassersbyGridDemographics"
+    ]
+  },
+  "municipalityGridX500": {
+    "name": "municipalityGridX500",
+    "displayName": "Durchreisende Gemeinde auf Basis 500m x 500m Raster",
+    "icon": "gi-icon-municipality-grid-500",
+    "description": "<strong>Durchreisende Gemeinde auf Basis 500m x 500m Raster</strong><p>Diese Ansicht stellt Daten mit Bezug auf die gesamte Gemeinde dar.<br>Weiters werden die Daten des 500m x 500m Rasters angezeigt.</p>",
+    "filters": [
+      "Month",
+      "Weekday",
+      "Age",
+      "Gender"
+    ],
+    "overlays": [
+      "PassersbyGrid",
+      "Municipality",
+      "Pin"
+    ],
+    "charts": [
+      "PassersbyTile",
+      "PassersbyTileDemographics",
+      "PassersbyGridDemographics"
+    ]
+  },
+  "municipalityGridX250": {
+    "name": "municipalityGridX250",
+    "displayName": "Durchreisende Gemeinde auf Basis 250m x 250m Raster",
+    "icon": "gi-icon-municipality-grid-250",
+    "description": "<strong>Durchreisende Gemeinde auf Basis 250m x 250m Raster</strong><p>Diese Ansicht stellt Daten mit Bezug auf die gesamte Gemeinde dar.<br>Weiters werden die Daten des 250m x 250m Rasters angezeigt.</p>",
+    "filters": [
+      "Month",
+      "Weekday",
+      "Age",
+      "Gender"
+    ],
+    "overlays": [
+      "PassersbyGrid",
+      "Municipality",
+      "Pin"
+    ],
+    "charts": [
+      "PassersbyTile",
+      "PassersbyTileDemographics",
+      "PassersbyGridDemographics"
+    ]
+  },
+  "perimeterGridMixed": {
+    "name": "perimeterGridMixed",
+    "displayName": "Durchreisende Umkreis auf Basis dynamischer Raster (Kombination aus 250m und 500m Raster)",
+    "icon": "gi-icon-perimeter-mix",
+    "description": "<strong>Durchreisende Umkreis auf Basis dynamischer Raster (Kombination aus 250m und 500m Raster)</strong><p>Diese Ansicht stellt Daten mit Bezug auf den dargestellten Umkreis.<br>Weiters werden die Daten des gemischten Rasters angezeigt.</p>",
+    "filters": [
+      "Month",
+      "Weekday",
+      "Age",
+      "Gender"
+    ],
+    "overlays": [
+      "PassersbyGridPerimeter",
+      "Perimeter",
+      "Pin"
+    ],
+    "charts": [
+      "PassersbyTile",
+      "PassersbyTileDemographics",
+      "PassersbyGridPerimeterDemographics"
+    ]
+  },
+  "perimeterGridX500": {
+    "name": "perimeterGridX500",
+    "displayName": "Durchreisende Umkreis auf Basis 500m x 500m Raster",
+    "icon": "gi-icon-perimeter-500",
+    "description": "<strong>Durchreisende Umkreis auf Basis 500m x 500m Raster</strong><p>Diese Ansicht stellt Daten mit Bezug auf den dargestellten Umkreis.<br>Weiters werden die Daten des 500m x 500m Rasters angezeigt.</p>",
+    "filters": [
+      "Month",
+      "Weekday",
+      "Age",
+      "Gender"
+    ],
+    "overlays": [
+      "PassersbyGridPerimeter",
+      "Perimeter",
+      "Pin"
+    ],
+    "charts": [
+      "PassersbyTile",
+      "PassersbyTileDemographics",
+      "PassersbyGridPerimeterDemographics"
+    ]
+  },
+  "perimeterGridX250": {
+    "name": "perimeterGridX250",
+    "displayName": "Durchreisende Umkreis auf Basis 250m x 250m Raster",
+    "icon": "gi-icon-perimeter-250",
+    "description": "<strong>Durchreisende Umkreis auf Basis 250m x 250m Raster</strong><p>Diese Ansicht stellt Daten mit Bezug auf den dargestellten Umkreis.<br>Weiters werden die Daten des 250m x 250m Rasters angezeigt.</p>",
+    "filters": [
+      "Month",
+      "Weekday",
+      "Age",
+      "Gender"
+    ],
+    "overlays": [
+      "PassersbyGridPerimeter",
+      "Perimeter",
+      "Pin"
+    ],
+    "charts": [
+      "PassersbyTile",
+      "PassersbyTileDemographics",
+      "PassersbyGridPerimeterDemographics"
+    ]
+  }
+}
