@@ -122,7 +122,7 @@ function callHello(){
 }
 
 function callHelloEasyAuth(){
-    getTokenPopup(functionRequest)
+    getTokenPopup(easyauthRequest)
     .then(response => {
         callFunction(functionConfig.helloEasyAuth, response.accessToken, logResponse);
     }).catch(error => {

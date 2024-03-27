@@ -53,8 +53,12 @@ const loginRequest = {
 };
 
 const functionRequest = {
-    scopes: ["api://3d14b644-fee0-4f1f-af2e-0343c86148c0/secapp", "api://f579ec0e-a953-485b-8151-aeaf757c6f03/user_impersonation"],
+    scopes: ["api://3d14b644-fee0-4f1f-af2e-0343c86148c0/secapp"],
     forceRefresh: true
+}
+
+const easyauthRequest = {
+    scopes: ["api://f579ec0e-a953-485b-8151-aeaf757c6f03/user_impersonation"]
 }
 
 const reportRequest = {
