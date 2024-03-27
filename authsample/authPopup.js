@@ -121,4 +121,13 @@ function callHello(){
     });
 }
 
+function callHelloEasyAuth(){
+    getTokenPopup(functionRequest)
+    .then(response => {
+        callFunction(functionConfig.helloEasyAuth, response.accessToken, logResponse);
+    }).catch(error => {
+        console.error(error);
+    });
+}
+
 selectAccount();

@@ -101,6 +101,20 @@ function callHello() {
         });
 }
 
+function callHelloEasyAuth() {
+    getTokenRedirect(functionRequest)
+        .then((response) => {
+            callFunction(
+                functionConfig.helloEasyAuth,
+                response.accessToken,
+                logResponse
+            );
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
+
 function seeProfile() {
     getTokenRedirect(loginRequest)
         .then((response) => {
