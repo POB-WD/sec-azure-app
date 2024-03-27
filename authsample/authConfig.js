@@ -58,7 +58,7 @@ const functionRequest = {
 }
 
 const easyauthRequest = {
-    scopes: ["api://f579ec0e-a953-485b-8151-aeaf757c6f03/access_funcapp"],
+    scopes: ["api://3d14b644-fee0-4f1f-af2e-0343c86148c0/secapp"],
     forceRefresh: true
 }
 
