@@ -58,7 +58,8 @@ const functionRequest = {
 }
 
 const easyauthRequest = {
-    scopes: ["api://f579ec0e-a953-485b-8151-aeaf757c6f03/user_impersonation"]
+    scopes: ["api://f579ec0e-a953-485b-8151-aeaf757c6f03/user_impersonation"],
+    forceRefresh: true
 }
 
 const reportRequest = {
